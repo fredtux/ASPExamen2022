@@ -1,0 +1,20 @@
+﻿<div class="article">
+    <p>@ViewBag.art.Title</p>
+    <br />
+
+    <p>@ViewBag.art.Content</p>
+    <br />
+
+    <p>@ViewBag.art.Date</p>
+    <br />
+
+    <p>@ViewBag.cat.Title</p>
+    <br />
+
+    <form method="POST" action="/Articles/Delete">
+        <input type="hidden" name="aid" value="@ViewBag.art.Title" />
+        <button type="submit">Sterge</button>
+    </form>
+
+    <a href="/Articles/Edit/@ViewBag.art.Title">Editeaza</a>
+</div>

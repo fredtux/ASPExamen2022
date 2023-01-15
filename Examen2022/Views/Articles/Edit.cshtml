@@ -1,0 +1,21 @@
+﻿<form method="POST", action="/Articles/Edit">
+    <input type="hidden" name="oldTitle" value="@ViewBag.art.Title" />
+
+    <label for="Title">Titlu</label>
+    <input type="text" id="Title" name="Title" value="@ViewBag.art.Title" />
+    <br />
+
+    <label for="Content">Continut</label>
+    <input type="text" id="Content" name="Content" value="@ViewBag.art.Content" />
+    <br />
+
+    <label for="Category">Categorie</label>
+    <select name="category" id="Category">
+        @foreach(var c in ViewBag.cats)
+        {
+            <!option value="@c.Title" @(c.Id == ViewBag.cat.Id ? "selected" : "")>@c.Title</!option>
+        }
+    </select>
+
+    <button type="submit">Editeaza</button>
+</form>

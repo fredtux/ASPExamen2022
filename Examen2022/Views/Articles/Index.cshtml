@@ -1,0 +1,23 @@
+﻿@foreach(var art in ViewBag.arts){
+    <div class="article">
+        <a href="/Articles/Show/@art.Title">@art.Title</a>
+        <br />
+
+        <p>@art.Content</p>
+        <br />
+
+        <p>@art.Date</p>
+        <br />
+
+        <p>@art.Category</p>
+        <br />
+    </div>
+
+    <form method="POST" action="/Articles/Delete">
+        <input type="hidden" name="aid" value="@art.Title" />
+        <button type="submit">Sterge</button>
+    </form>
+    <a href="/Articles/Edit/@art.Title">Editeaza</a>
+
+    <hr />
+}
